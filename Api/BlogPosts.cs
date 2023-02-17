@@ -46,7 +46,7 @@ namespace Api
                 c.Title,
                 c.Author,
                 c.PublishedDate,
-                c.BlogPostMarkdpwn,
+                c.BlogPostMarkdown,
                 c.Status,
                 c.Tags
                 FROM c

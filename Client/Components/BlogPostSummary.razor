@@ -1,0 +1,12 @@
+﻿<article @onclick=@Navigate>
+    <h2>@Summary.Title</h2>
+    <div>
+        @foreach(var tag in Summary.Tags)
+        {
+            <em>@tag,</em>
+        }
+    </div>
+    <div>
+        @((MarkupString)Markdown.ToHtml(Summary.BlogPostMarkdown))
+    </div>
+</article>

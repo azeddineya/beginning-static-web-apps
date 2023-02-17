@@ -1,5 +1,6 @@
 ﻿@page "/"
 
+
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
@@ -7,3 +8,24 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@if (BlogPostSummaryService.Summaries is null)
+{
+    <div>Loading ...</div>
+}
+else
+{
+   <div>
+       <h2>Recent Blog Post</h2>
+       @if(Summary == null)
+        {
+            <p class="byline">No blog posts found</p>
+        }
+        else
+        {
+            <div class="home-page">
+                <BlogPostSummary Summary="@Summary" />
+            </div>
+        }
+    </div>
+}

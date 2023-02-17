@@ -10,18 +10,7 @@ else
 {
     @foreach(var blogPostSummary in BlogPostSummaryService.Summaries.OrderByDescending(bps => bps.PublishedDate))
     {
-        <article @onclick="() => Navigate(blogPostSummary.Id,blogPostSummary.Author)">
-            <h2>@blogPostSummary.Title</h2>
-            <div>
-                @foreach(var tag in blogPostSummary.Tags)
-                {
-                    <em>@tag,</em>
-                    <div>
-                        @((MarkupString)Markdown.ToHtml(blogPostSummary.BlogPostMarkdown))
-                    </div>
-                }
-            </div>
-        </article>
+        <BlogPostSummary Summary="@blogPostSummary" />
       
     }
 }
